@@ -1,0 +1,28 @@
+## Valid Anagram
+By subtracting character 'A' from an arbitrary character in a string, you get the letter's index in the array:
+
+'A' - 'A' == 0
+'B' - 'A' == 1
+'C' - 'A' == 2
+
+method-1: SORTING
+
+public boolean isAnagram(String s, String t) {
+    if (s.length() != t.length()) {
+        return false;
+    }
+    char[] str1 = s.toCharArray();
+    char[] str2 = t.toCharArray();
+    Arrays.sort(str1);
+    Arrays.sort(str2);
+    return Arrays.equals(str1, str2);
+}
+
+Complexity analysis
+
+Time complexity : O(n \log n)O(nlogn). Assume that nn is the length of ss, sorting costs O(n \log n)O(nlogn) and comparing two strings costs O(n)O(n). Sorting time dominates and the overall time complexity is O(n \log n)O(nlogn).
+
+Space complexity : O(1)O(1). Space depends on the sorting implementation which, usually, costs O(1)O(1) auxiliary space if heapsort is used. Note that in Java, toCharArray() makes a copy of the string so it costs O(n)O(n) extra space, but we ignore this for complexity analysis because:
+
+It is a language dependent detail.
+It depends on how the function is designed. For example, the function parameter types can be changed to char[].
