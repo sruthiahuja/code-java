@@ -22,9 +22,4 @@ public boolean isAnagram(String s, String t) {
 'A' - 'A' == 0
 'B' - 'A' == 1
 'C' - 'A' == 2
- By subtracting character 'A' from an arbitrary character in a string, you get the letter's index in the array:
-
-'A' - 'A' == 0
-'B' - 'A' == 1
-'C' - 'A' == 2
 */
